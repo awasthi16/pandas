@@ -1,0 +1,104 @@
+import pandas as pd
+data =[10,20,30,21]
+
+
+# z=pd.Series(data)
+# print(z)
+
+data1={"name":["ram","shyam","mohit"],
+       "class":[4,10,20]}
+z=pd.DataFrame(data1)
+
+print((data1["class"]>10))
+# print(pd.DataFrame(data1["class"]))
+ data1[data1['class'] > 25]
+
+------------------------------------
+
+
+df[(df['Age'] > 25) & (df['Name'] == 'Bob')] 
+
+
+import pandas as pd
+
+data1 = {"name": ["ram", "shyam", "mohit"],
+         "class": [4, 10, 20]}
+
+z = pd.DataFrame(data1)
+
+print(z["class"] > 10) 
+----------------------------
+print(z[z["class"] > 10])
+
+
+
+
+
+
+
+
+# data = [10, 20, 30, 40]
+# s = pd.Series(data)
+# print(s)
+
+# data = {'Name': ['Alice', 'Bob', 'Charlie'],
+#         'Age': [25, 30, 35],
+#         'Salary': [50000, 60000, 70000]}
+
+# df = pd.DataFrame(data)
+# # df=pd.Series(data)
+# print(df)
+
+# print(((data['Salary'])))
+
+
+--
+
+
+# df['column'] → Select a column
+# df[['col1', 'col2']] → Select multiple columns
+# df.iloc[row, col] → Select by index
+# df.loc[row_label, col_label] → Select by label
+
+# df[df['Age'] > 25] → Conditional filtering
+# df.query("Age > 25") → Query method
+# df[(df['Age'] > 25) & (df['Name'] == 'Bob')] → Multiple conditions
+
+
+
+
+----------------
+import pandas as pd
+
+# Creating a sample DataFrame
+data = {
+    "Name": ["Alice", "Bob", "Charlie"],
+    "Age": [25, 30, 35],
+    "City": ["New York", "London", "Paris"]
+}
+
+df = pd.DataFrame(data)
+
+# 1. Filter Data Based on a Condition (Age > 30)
+filtered_df = df[df["Age"] > 30]
+print("Filtered Data (Age > 30):\n", filtered_df)
+
+# 2. Add a New Column "Salary"
+df["Salary"] = [50000, 60000, 70000]
+print("\nDataFrame after adding 'Salary' column:\n", df)
+
+# 3. Drop a Column "City"
+df_without_city = df.drop(columns=["City"])
+print("\nDataFrame after dropping 'City' column:\n", df_without_city)
+
+# 4. Find Missing Values and Replace with Default Value
+df.loc[1, "Age"] = None  # Introduce a missing value for demonstration
+print("\nDataFrame with missing value:\n", df)
+
+df.fillna({"Age": 28}, inplace=True)  # Replacing missing values with default (28)
+print("\nDataFrame after replacing missing values:\n", df)
+
+# 5. Group Data by "City" and Calculate Average "Age"
+grouped_df = df.groupby("City")["Age"].mean()
+print("\nAverage Age by City:\n", grouped_df)
+
