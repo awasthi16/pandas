@@ -1,0 +1,71 @@
+📊 Data Exploration & Cleaning
+
+How many movies are in the dataset?
+
+What are the data types of each column?
+
+Are there any missing values in the dataset? Show the count per column.
+
+What is the range (min–max) of release years of movies?
+
+Which column has the highest number of missing values?
+
+🎬 Movies Analysis
+
+What are the top 10 movies by IMDB Rating?
+
+Which movies have the longest and shortest runtime?
+
+How many movies are rated 9.0 or higher?
+
+What is the average IMDB rating of all movies?
+
+List the top 10 highest-grossing movies.
+
+🗓 Yearly Trends
+
+Which year had the most movies in the dataset?
+
+Plot the number of movies released per decade.
+
+How has the average IMDB rating changed over decades?
+
+Which decade produced the highest number of top 1000 movies?
+
+Find the top 5 movies of the 2000s based on IMDB rating.
+
+🎭 Genre Analysis
+
+What are the most common movie genres?
+
+Which genre has the highest average IMDB rating?
+
+Which genre has the longest average runtime?
+
+Which genre has the most number of movies above 8.5 rating?
+
+Plot a bar chart of top 10 genres by frequency.
+
+🎥 Directors & Stars
+
+Who directed the most movies in this dataset?
+
+Which director has the highest average IMDB rating?
+
+Which actors (Star1–Star4) appear most frequently in the dataset?
+
+Who is the actor associated with the highest-grossing movies?
+
+Which star has the highest average IMDB rating across their movies?
+
+💰 Votes & Gross
+
+Which movie received the maximum number of votes?
+
+Find the correlation between IMDB rating and number of votes.
+
+Do higher grossing movies also tend to have higher ratings?
+
+Plot a scatter plot of Votes vs Rating.
+
+Compare the gross earnings distribution of movies rated above 8.5 vs below 8.5.
