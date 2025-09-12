@@ -1,0 +1,126 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from collections import Counter
+
+# Load dataset
+df = pd.read_csv("hf://datasets/drossi/EDA_on_IMDB_Movies_Dataset/imdb_top_1000.csv")
+
+# Convert numeric columns
+df['Runtime_num'] = df['Runtime'].str.replace(" min","").astype(float)
+df['Gross_num'] = df['Gross'].str.replace(",","").astype(float)
+
+print("\n========== 1. Number of Movies ==========")
+print(len(df))
+
+print("\n========== 2. Data Types ==========")
+print(df.dtypes)
+
+print("\n========== 3. Missing Values ==========")
+print(df.isnull().sum())
+
+print("\n========== 4. Release Year Range ==========")
+print(df['Released_Year'].min(), df['Released_Year'].max())
+
+print("\n========== 5. Column with Most Missing Values ==========")
+print(df.isnull().sum().idxmax())
+
+print("\n========== 6. Top 10 Movies by Rating ==========")
+print(df[['Series_Title','IMDB_Rating']].sort_values(by='IMDB_Rating', ascending=False).head(10))
+
+print("\n========== 7. Longest & Shortest Runtime ==========")
+print("Longest:", df.loc[df['Runtime_num'].idxmax(), ['Series_Title','Runtime']])
+print("Shortest:", df.loc[df['Runtime_num'].idxmin(), ['Series_Title','Runtime']])
+
+print("\n========== 8. Movies with Rating >= 9 ==========")
+print((df['IMDB_Rating'] >= 9.0).sum())
+
+print("\n========== 9. Average IMDB Rating ==========")
+print(df['IMDB_Rating'].mean())
+
+print("\n========== 10. Top 10 Highest Grossing Movies ==========")
+print(df[['Series_Title','Gross_num']].sort_values(by='Gross_num', ascending=False).head(10))
+
+print("\n========== 11. Year with Most Movies ==========")
+print(df['Released_Year'].value_counts().head(1))
+
+print("\n========== 12. Movies per Decade ==========")
+df['Decade'] = (df['Released_Year']//10)*10
+df['Decade'].value_counts().sort_index().plot(kind='bar')
+plt.title("Movies per Decade")
+plt.show()
+
+print("\n========== 13. Avg Rating by Decade ==========")
+df.groupby('Decade')['IMDB_Rating'].mean().plot(marker='o')
+plt.title("Avg IMDB Rating by Decade")
+plt.show()
+
+print("\n========== 14. Decade with Most Movies ==========")
+print(df['Decade'].value_counts().idxmax())
+
+print("\n========== 15. Top 5 Movies of 2000s ==========")
+print(df[df['Decade']==2000][['Series_Title','IMDB_Rating']].sort_values(by='IMDB_Rating',ascending=False).head(5))
+
+print("\n========== 16. Most Common Genres ==========")
+genres = Counter([g for sub in df['Genre'].dropna() for g in sub.split(", ")])
+print(genres.most_common(10))
+
+print("\n========== 17. Genre with Highest Avg Rating ==========")
+genre_ratings = [(g, df[df['Genre'].str.contains(g, na=False)]['IMDB_Rating'].mean()) for g in genres]
+print(sorted(genre_ratings, key=lambda x: x[1], reverse=True)[:5])
+
+print("\n========== 18. Genre with Longest Avg Runtime ==========")
+genre_runtime = [(g, df[df['Genre'].str.contains(g, na=False)]['Runtime_num'].mean()) for g in genres]
+print(sorted(genre_runtime, key=lambda x: x[1], reverse=True)[:5])
+
+print("\n========== 19. Genre with Most Movies > 8.5 ==========")
+genre_counts = [(g, df[(df['IMDB_Rating']>8.5) & (df['Genre'].str.contains(g, na=False))].shape[0]) for g in genres]
+print(sorted(genre_counts, key=lambda x: x[1], reverse=True)[:5])
+
+print("\n========== 20. Top 10 Genres Bar Chart ==========")
+pd.Series(dict(genres)).sort_values(ascending=False).head(10).plot(kind='bar')
+plt.title("Top 10 Genres")
+plt.show()
+
+print("\n========== 21. Director with Most Movies ==========")
+print(df['Director'].value_counts().head(1))
+
+print("\n========== 22. Director with Highest Avg Rating ==========")
+print(df.groupby('Director')['IMDB_Rating'].mean().sort_values(ascending=False).head(5))
+
+print("\n========== 23. Most Frequent Actors ==========")
+actors = pd.concat([df['Star1'], df['Star2'], df['Star3'], df['Star4']])
+print(actors.value_counts().head(10))
+
+print("\n========== 24. Actor in Highest Grossing Movie ==========")
+top_gross = df.loc[df['Gross_num'].idxmax()]
+print(top_gross[['Series_Title','Star1','Star2','Star3','Star4','Gross_num']])
+
+print("\n========== 25. Star with Highest Avg Rating ==========")
+actor_ratings = actors.dropna().unique()
+rating_list = []
+for a in actor_ratings:
+    avg = df[(df[['Star1','Star2','Star3','Star4']]==a).any(axis=1)]['IMDB_Rating'].mean()
+    rating_list.append((a, avg))
+print(sorted(rating_list, key=lambda x: x[1], reverse=True)[:5])
+
+print("\n========== 26. Movie with Max Votes ==========")
+print(df.loc[df['No_of_Votes'].idxmax(), ['Series_Title','No_of_Votes']])
+
+print("\n========== 27. Correlation Rating vs Votes ==========")
+print(df[['IMDB_Rating','No_of_Votes']].corr())
+
+print("\n========== 28. Correlation Gross vs Rating ==========")
+print(df[['Gross_num','IMDB_Rating']].corr())
+
+print("\n========== 29. Scatter Plot: Votes vs Rating ==========")
+plt.scatter(df['No_of_Votes'], df['IMDB_Rating'], alpha=0.5)
+plt.xlabel("Votes")
+plt.ylabel("IMDB Rating")
+plt.title("Votes vs Rating")
+plt.show()
+
+print("\n========== 30. Gross Comparison (>8.5 vs <=8.5) ==========")
+df.boxplot(column='Gross_num', by=df['IMDB_Rating']>8.5)
+plt.title("Gross by Rating Category")
+plt.suptitle("")
+plt.show()
