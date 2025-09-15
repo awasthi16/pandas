@@ -73,3 +73,83 @@ df.style.highlight_max(subset=["Age","Fare"], color="lightgreen")
 
 
 
+
+
+-----------------------------------
+
+
+Load the dataset and display the first 5 rows.
+
+Show the column names and their data types.
+
+Find the total number of rows and columns.
+
+Check if there are any missing values in the dataset.
+
+Display summary statistics for numerical columns.
+
+
+
+Retrieve all records where the crocodile’s average length is greater than 5 meters.
+
+Select only Species, Continent, and Average_Length_m columns.
+
+Find all crocodiles that live in Africa.
+
+Get the species that are marked as "Critically Endangered".
+
+Retrieve crocodiles whose population estimate is below 10,000.
+
+
+
+Find the average weight of crocodiles grouped by continent.
+
+Count how many species exist in each conservation status.
+
+Find the maximum population estimate for each continent.
+
+Get the mean and median length of crocodiles grouped by habitat type.
+
+Which continent has the most crocodile species?
+
+
+
+Sort crocodiles by average length in descending order.
+
+Sort species by population estimate (lowest to highest).
+
+Sort species first by continent, then by average weight.
+
+
+
+Find crocodiles that are more than 4m long and weigh less than 400kg.
+
+Get species whose diet contains the word "fish".
+
+Select all species found in both Asia and Africa (if dataset allows multiple continents).
+
+Find all crocodiles whose scientific name starts with "Crocodylus".
+
+
+
+What is the overall mean length and weight of crocodiles worldwide?
+
+Find the standard deviation of population estimates.
+
+Identify the heaviest crocodile species per continent.
+
+   
+Replace missing values in Population_Estimate with the column’s mean.
+
+Standardize text values in Continent column (e.g., "africa", "Africa" → "Africa").
+
+Drop duplicate records (if any).
+
+Visualization (with Pandas/Matplotlib)
+
+Plot a bar chart showing the number of species per continent.
+
+Plot a histogram of crocodile average lengths.
+
+
+
