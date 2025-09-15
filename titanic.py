@@ -78,78 +78,83 @@ df.style.highlight_max(subset=["Age","Fare"], color="lightgreen")
 -----------------------------------
 
 
+📊 Basic Exploration
+
 Load the dataset and display the first 5 rows.
 
-Show the column names and their data types.
+Show the total number of observations (rows) and columns.
 
-Find the total number of rows and columns.
+Display the data types of all columns.
 
-Check if there are any missing values in the dataset.
+Check if there are missing values in any column.
 
-Display summary statistics for numerical columns.
+Display summary statistics for Observed Length (m) and Observed Weight (kg).
 
+🔎 Filtering & Selection
 
+Retrieve all observations where Observed Length (m) is greater than 4.
 
-Retrieve all records where the crocodile’s average length is greater than 5 meters.
+Find all crocodiles observed in India.
 
-Select only Species, Continent, and Average_Length_m columns.
+Get all entries where Conservation Status is "Critically Endangered".
 
-Find all crocodiles that live in Africa.
+Select only Common Name, Scientific Name, and Country/Region columns.
 
-Get the species that are marked as "Critically Endangered".
+Find all observations where Sex is "Female" and Age Class is "Adult".
 
-Retrieve crocodiles whose population estimate is below 10,000.
+📂 Grouping & Aggregation
 
+Count how many observations exist per Country/Region.
 
+Find the average observed length grouped by Habitat Type.
 
-Find the average weight of crocodiles grouped by continent.
+Find the maximum observed weight for each Family.
 
-Count how many species exist in each conservation status.
+Count the number of species (Scientific Name) observed per continent/country.
 
-Find the maximum population estimate for each continent.
+Find the average observed length and weight grouped by Sex.
 
-Get the mean and median length of crocodiles grouped by habitat type.
+📌 Sorting
 
-Which continent has the most crocodile species?
+Sort all observations by Observed Length (m) in descending order.
 
+Sort observations by Country/Region and then by Observed Weight (kg).
 
+Display the top 5 heaviest crocodile observations.
 
-Sort crocodiles by average length in descending order.
+🧩 Advanced Filtering
 
-Sort species by population estimate (lowest to highest).
+Find crocodiles that are longer than 5m but weigh less than 400kg.
 
-Sort species first by continent, then by average weight.
+Get all entries where Observer Name starts with "Dr.".
 
+Find observations where Notes column contains the word "injury".
 
+Retrieve all observations made after "2020-01-01".
 
-Find crocodiles that are more than 4m long and weigh less than 400kg.
+Find species (Scientific Name) that were observed in more than one country.
 
-Get species whose diet contains the word "fish".
+📊 Statistics & Derived Columns
 
-Select all species found in both Asia and Africa (if dataset allows multiple continents).
+Calculate the mean, median, and standard deviation of Observed Length (m).
 
-Find all crocodiles whose scientific name starts with "Crocodylus".
+Create a new column "Size Category":
 
+Small (<2m)
 
+Medium (2–4m)
 
-What is the overall mean length and weight of crocodiles worldwide?
+Large (>4m)
+Then count observations in each category.
 
-Find the standard deviation of population estimates.
+Find the correlation between Observed Length (m) and Observed Weight (kg).
 
-Identify the heaviest crocodile species per continent.
+Which Age Class has the highest average observed weight?
 
-   
-Replace missing values in Population_Estimate with the column’s mean.
+For each Conservation Status, find the average observed length.
 
-Standardize text values in Continent column (e.g., "africa", "Africa" → "Africa").
+📈 Visualization
 
-Drop duplicate records (if any).
+Plot a histogram of Observed Length (m).
 
-Visualization (with Pandas/Matplotlib)
-
-Plot a bar chart showing the number of species per continent.
-
-Plot a histogram of crocodile average lengths.
-
-
-
+Create a bar chart showing the number of observations per Habitat Type.
