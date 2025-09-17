@@ -1,0 +1,73 @@
+https://www.kaggle.com/datasets/yashdevladdha/uber-ride-analytics-dashboard
+
+
+📊 30 Pandas Practice Questions
+🔹 Basic Exploration
+
+Load the dataset and display the first 10 rows.
+
+Show the total number of rows and columns.
+
+Display all column names.
+
+Find the data type of each column.
+
+Check if there are any missing values in the dataset.
+
+Show summary statistics (describe()) for Booking Value and Ride Distance.
+
+Display the number of unique values in Booking Status.
+
+Find the top 5 most frequent Pickup Location.
+
+Retrieve all rides where Payment Method is "Cash".
+
+Show the unique values in Vehicle Type.
+
+🔹 Filtering & Selection
+
+Select all rides with Booking Status = Completed.
+
+Retrieve all rides where Driver Ratings is less than 3.
+
+Get all rides cancelled by the Customer.
+
+Find rides where Ride Distance > 15 km and Booking Value > 500.
+
+Retrieve all rides where the Customer Rating is missing (NaN).
+
+🔹 Aggregation & Grouping
+
+Count the number of rides for each Booking Status.
+
+Find the average Booking Value for each Vehicle Type.
+
+Calculate the average Ride Distance grouped by Pickup Location.
+
+Find the most common Driver Cancellation Reason.
+
+Get the maximum and minimum Booking Value for each Payment Method.
+
+🔹 Time & Date Analysis
+
+Extract the hour from Time and find at what hour most rides were booked.
+
+Find the day with the highest number of completed rides.
+
+Count how many rides were cancelled on weekends vs weekdays.
+
+Calculate the average Driver Ratings per day.
+
+🔹 Advanced Queries
+
+Find the top 5 customers (Customer ID) who spent the most (Booking Value).
+
+Find the correlation between Ride Distance and Booking Value.
+
+Create a new column Revenue After Cancellation (set value=0 if cancelled).
+
+Identify customers who cancelled more than 3 rides.
+
+Compare average Booking Value between Cash and Online Payment.
+
+Find the percentage of rides that were Incomplete out of total bookings.
