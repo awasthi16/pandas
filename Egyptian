@@ -1,0 +1,74 @@
+🔹 Basic Exploration
+
+Load the dataset and display the first 10 rows.
+
+Show the total number of rows and columns in the dataset.
+
+Display all column names and their data types.
+
+Check how many missing values are present in each column.
+
+Show the unique property types available in the dataset.
+
+🔹 Data Cleaning
+
+Remove duplicate rows from the dataset.
+
+Convert the price column to numeric (remove commas or currency signs if present).
+
+Convert the area column to numeric (if units like “sqm” are included).
+
+Fill missing values in the bedrooms column with the median number of bedrooms.
+
+Replace missing values in categorical columns (e.g., city, neighborhood) with "Unknown".
+
+🔹 Filtering & Selection
+
+Retrieve all listings with price greater than 1,000,000 EGP.
+
+Find all apartments with an area larger than 200 sqm.
+
+Select only villas in Cairo with at least 4 bedrooms.
+
+Show listings that have both missing area and missing price.
+
+Get the top 5 most expensive listings.
+
+🔹 Feature Engineering
+
+Create a new column price_per_sqm = price / area.
+
+Find the listing with the highest price_per_sqm.
+
+https://www.kaggle.com/datasets/hassankhaled21/egyptian-real-estate-listings?select=egypt_real_estate_listings.csv
+
+
+Calculate the average price_per_sqm for each property type.
+
+Create a new column is_luxury where value = 1 if price > 5,000,000, else 0.
+
+Extract year and month from the listing date column (if available).
+
+🔹 Aggregation & Grouping
+
+Find the average price of properties in each city.
+
+Find the median area of properties grouped by property type.
+
+Count how many listings exist per city.
+
+Show the average price_per_sqm for each neighborhood in Cairo.
+
+Find the top 3 property types with the highest average price_per_sqm.
+
+🔹 Sorting & Ranking
+
+Sort listings by price in descending order.
+
+Sort listings by price_per_sqm within each city.
+
+Find the 10 cheapest listings by price_per_sqm.
+
+Rank listings by price within each property type.
+
+Find the city with the most expensive average property price.
