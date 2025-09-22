@@ -166,15 +166,26 @@ Create a bar chart showing the number of observations per Habitat Type.
 
 ---------------------------------group by --------------------------
     Group by Sex and find the average Age of males and females.
-(Hint: df.groupby("Sex")["Age"].mean())
+
+ans: df.groupby("Sex")["Age"].mean()
+
 
 Group by Survived and find the total number of passengers in each group.
+    df.groupby("Survived")["PassengerId"].count()
+
 
 Group by Sex and count how many survived in each category.
+    df.groupby("Sex")["Survived"].sum()
+
 
 Find the maximum Fare paid by survivors and non-survivors (Survived column).
+df.groupby("Survived")["Fare"].max()
+
+
 
 Group by Sex and calculate the average Fare paid.
+    df.groupby("Sex")["Fare"].mean()
+
 
 Group by Survived and calculate both the mean and median of Age.
 
