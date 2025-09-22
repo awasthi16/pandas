@@ -158,3 +158,31 @@ For each Conservation Status, find the average observed length.
 Plot a histogram of Observed Length (m).
 
 Create a bar chart showing the number of observations per Habitat Type.
+
+
+
+
+
+
+---------------------------------group by --------------------------
+    Group by Sex and find the average Age of males and females.
+(Hint: df.groupby("Sex")["Age"].mean())
+
+Group by Survived and find the total number of passengers in each group.
+
+Group by Sex and count how many survived in each category.
+
+Find the maximum Fare paid by survivors and non-survivors (Survived column).
+
+Group by Sex and calculate the average Fare paid.
+
+Group by Survived and calculate both the mean and median of Age.
+
+Group by Sex and Survived, and count how many passengers are in each group.
+
+Find the sum of Fare grouped by Survived.
+
+Group by Sex and find the youngest and oldest passenger (Age).
+
+Group by Survived and calculate the survival rate for males and females separately.
+(Tip: You can use groupby(["Sex", "Survived"]).size() and then normalize)
