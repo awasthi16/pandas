@@ -82,3 +82,74 @@ corr = tips.corr()
 sns.heatmap(corr, annot=True, cmap="coolwarm")
 plt.title("Correlation Heatmap")
 plt.show()
+
+
+
+
+
+
+------------------------
+🧩 Setup
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Load sample datasets
+tips = sns.load_dataset("tips")
+iris = sns.load_dataset("iris")
+
+1️⃣ sns.scatterplot() — Relationship between two continuous variables
+sns.scatterplot(data=iris, x="sepal_length", y="petal_length", hue="species")
+plt.title("Scatter Plot - Sepal vs Petal Length")
+plt.show()
+
+2️⃣ sns.lineplot() — Trends over time or continuous data
+sns.lineplot(data=tips, x="size", y="total_bill", marker="o")
+plt.title("Line Plot - Total Bill by Group Size")
+plt.show()
+
+3️⃣ sns.barplot() — Average values with confidence intervals
+sns.barplot(data=tips, x="day", y="total_bill", hue="sex")
+plt.title("Bar Plot - Average Bill by Day and Gender")
+plt.show()
+
+4️⃣ sns.countplot() — Counts the number of observations in each category
+sns.countplot(data=tips, x="day", hue="sex")
+plt.title("Count Plot - Number of Customers per Day")
+plt.show()
+
+5️⃣ sns.boxplot() — Shows distribution & outliers
+sns.boxplot(data=tips, x="day", y="total_bill", hue="smoker")
+plt.title("Box Plot - Bill by Day and Smoker Status")
+plt.show()
+
+6️⃣ sns.violinplot() — Combines boxplot and KDE
+sns.violinplot(data=tips, x="day", y="total_bill", hue="sex", split=True)
+plt.title("Violin Plot - Bill Distribution by Day and Gender")
+plt.show()
+
+7️⃣ sns.stripplot() — Shows all individual points with jitter
+sns.stripplot(data=tips, x="day", y="total_bill", jitter=True, hue="sex")
+plt.title("Strip Plot - Bills per Day (with jitter)")
+plt.show()
+
+8️⃣ sns.swarmplot() — Like stripplot, but avoids overlap
+sns.swarmplot(data=tips, x="day", y="total_bill", hue="sex")
+plt.title("Swarm Plot - Non-overlapping Points")
+plt.show()
+
+9️⃣ sns.histplot() — Histogram
+sns.histplot(data=tips, x="total_bill", bins=20, kde=True)
+plt.title("Histogram - Total Bill Distribution")
+plt.show()
+
+🔟 sns.kdeplot() — Smooth density curve
+sns.kdeplot(data=tips["total_bill"], fill=True)
+plt.title("KDE Plot - Density of Total Bill")
+plt.show()
+
+1️⃣1️⃣ sns.ecdfplot() — Empirical Cumulative Distribution
+sns.ecdfplot(data=tips, x="total_bill", hue="sex")
+plt.title("ECDF Plot - Cumulative Distribution by Gender")
+plt.show()
+
