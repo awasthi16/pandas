@@ -1,0 +1,84 @@
+🎯 1. Basic Plotting Functions
+Function	Description
+sns.scatterplot()	Scatter plot — shows relationship between two continuous variables.
+sns.lineplot()	Line plot — for trends over time or continuous data.
+sns.barplot()	Bar chart — displays average values with confidence intervals.
+sns.countplot()	Counts the number of observations in each category.
+sns.boxplot()	Box plot — shows distribution and outliers for categorical data.
+sns.violinplot()	Combines boxplot and KDE — shows distribution and density.
+sns.stripplot()	Shows all individual points with jitter (useful for small datasets).
+sns.swarmplot()	Similar to stripplot, but avoids overlapping points.
+sns.histplot()	Histogram — distribution of a numeric variable.
+sns.kdeplot()	Kernel Density Estimate — smooth distribution curve.
+sns.ecdfplot()	Empirical Cumulative Distribution Function.
+📊 2. Matrix and Heatmap Plots
+Function	Description
+sns.heatmap()	Heatmap for showing data matrix values as color-coded cells.
+sns.clustermap()	Cluster map — heatmap with hierarchical clustering.
+sns.pairplot()	Pairwise relationships between variables — scatter matrix.
+sns.jointplot()	Combines scatter and hist/kde for two variables.
+sns.pairgrid()	Customizable version of pairplot.
+sns.jointgrid()	Customizable version of jointplot.
+📈 3. Categorical Plotting
+Function	Description
+sns.catplot()	General function for categorical plots (bar, box, violin, etc.).
+sns.boxenplot()	Alternative to boxplot for large datasets.
+sns.pointplot()	Shows mean point estimates with confidence intervals.
+sns.stripplot()	Shows all data points (good for small samples).
+sns.violinplot()	For distribution + density visualization.
+🧩 4. Regression and Relationship Plots
+Function	Description
+sns.lmplot()	Fits and plots a linear regression model.
+sns.regplot()	Similar to lmplot but simpler; supports low-level customization.
+sns.residplot()	Plots residuals of regression model.
+🎨 5. Styling and Aesthetics
+Function	Description
+sns.set()	Sets overall Seaborn style.
+sns.set_style()	Sets background style (darkgrid, whitegrid, dark, white, ticks).
+sns.set_context()	Controls scale of plot elements (paper, notebook, talk, poster).
+sns.set_palette()	Sets color palette for all plots.
+sns.color_palette()	Returns a list of colors.
+sns.palplot()	Displays a color palette.
+sns.despine()	Removes top/right spines for cleaner look.
+📦 6. Dataset Utilities
+Function	Description
+sns.load_dataset()	Loads built-in datasets (like “tips”, “iris”, “penguins”).
+sns.get_dataset_names()	Lists all available sample datasets.
+🔧 7. Grids for Advanced Plot Layouts
+Function	Description
+sns.FacetGrid()	Creates a grid of subplots based on categorical variables.
+sns.PairGrid()	For plotting pairwise relationships with custom mappings.
+sns.JointGrid()	For combining multiple plots (scatter + hist, etc.).
+🧮 8. Color and Palette Tools
+Function	Description
+sns.cubehelix_palette()	Creates continuous color palette.
+sns.light_palette()	Light color palette based on one color.
+sns.dark_palette()	Dark color palette.
+sns.diverging_palette()	For data that diverges around a midpoint.
+sns.color_palette()	View or set custom palettes.
+💡 9. Miscellaneous
+Function	Description
+sns.move_legend()	Move legend after plotting.
+sns.histplot()	Replaces old distplot() (which is deprecated).
+sns.displot()	Distribution plot combining hist/kde (faceted version).
+⚙️ 10. Deprecated / Replaced Functions
+Old Function	Replacement
+sns.distplot()	→ sns.histplot() or sns.kdeplot()
+sns.factorplot()	→ sns.catplot()
+🧠 Example Code
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load dataset
+tips = sns.load_dataset("tips")
+
+# Scatter plot
+sns.scatterplot(data=tips, x="total_bill", y="tip", hue="day", style="sex")
+plt.title("Total Bill vs Tip by Day and Gender")
+plt.show()
+
+# Heatmap example
+corr = tips.corr()
+sns.heatmap(corr, annot=True, cmap="coolwarm")
+plt.title("Correlation Heatmap")
+plt.show()
