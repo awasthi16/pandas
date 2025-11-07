@@ -153,3 +153,48 @@ sns.ecdfplot(data=tips, x="total_bill", hue="sex")
 plt.title("ECDF Plot - Cumulative Distribution by Gender")
 plt.show()
 
+
+
+
+
+
+test
+Use sns.scatterplot() to plot Observed Weight (kg) vs Observed Length (m). What relationship (if any) exists between length and weight?
+
+Use sns.lineplot() to plot how the average Observed Length changes across different Age groups (if age is numeric or categorical).
+
+Use sns.barplot() to show the average Observed Weight for each Family (taxonomic family) of crocodile.
+
+Use sns.countplot() to show the counts of crocodile records by Genus.
+
+Use sns.boxplot() to compare the distribution of Observed Weight across different Regions/Habitats (if there is a habitat/region column).
+
+Use sns.violinplot() to visualise the density of Observed Length for each Family.
+
+Use sns.stripplot() to plot individual Observed Weight points (with jitter) for each Family, to see the spread of weights per family.
+
+Use sns.swarmplot() (or stripplot with jitter=False) to show Observed Length of each individual, grouped by Genus.
+
+Use sns.histplot() to show the distribution of Observed Weight across all crocodile specimens.
+
+Use sns.kdeplot() to show the smooth density curve of Observed Length.
+
+Use sns.ecdfplot() to display the empirical cumulative distribution of Observed Weight — e.g., what percentage of individuals weigh below a given threshold.
+
+Use sns.scatterplot() with hue = Family to show how Observed Length vs Observed Weight differs by family.
+
+Use sns.barplot() to plot the average Age (or median age) of crocodiles by Genus.
+
+Use sns.boxplot() to compare the weight distributions of crocodile specimens by Region/Habitat, overlay with a stripplot of the individual points.
+
+Use sns.violinplot() to compare Observed Weight densities for male vs female specimens (if gender/sex column exists).
+
+Use sns.histplot() with hue = Family (and multiple="stack") to compare weight distributions by family.
+
+Use sns.scatterplot() where size = Age and colour = Genus, plotting Length vs Weight, to see how age influences the relationship.
+
+Use sns.lineplot() to show trend of average Observed Length across Family, ordering the families by the mean length.
+
+Use sns.ecdfplot() to compare the cumulative distributions of length for two specific genera (pick two genera with many data points).
+
+Use sns.kdeplot() with shade=True to overlay the densities of Observed Weight for two different families and compare their distributions.
