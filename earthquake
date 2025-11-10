@@ -1,0 +1,77 @@
+Load and preview the dataset. Show the first 10 rows and check column data types.
+
+Check for missing values in each column and calculate the percentage of missing data.
+
+Convert Year & Month into a datetime column named date.
+
+Get summary statistics (.describe()) for numeric columns like magnitude, depth, cdi, mmi, sig, etc.
+
+Find correlation among numerical features and visualize it using a seaborn heatmap.
+
+Check data range: What are the minimum and maximum values of magnitude, depth, and sig?
+
+Detect outliers in magnitude and depth using a boxplot.
+
+🔹 Magnitude Analysis
+
+Plot a histogram with KDE for earthquake magnitude distribution.
+
+Categorize magnitudes into bins (e.g. 0–3, 3–5, 5–7, 7+) and count how many events fall in each bin.
+
+Compute the average depth, cdi, and sig for each magnitude category.
+
+Show a scatter plot between magnitude and depth. Add a regression line.
+
+Which range of magnitude is most likely to cause a tsunami? (groupby magnitude bin and take mean of tsunami)
+
+🔹 Temporal Patterns
+
+Count how many earthquakes happened each year and plot a line chart.
+
+Plot the average magnitude per year to see if it’s increasing over time.
+
+Find the month with the highest average magnitude across all years.
+
+Create a bar chart of the number of earthquakes by month (1–12).
+
+Plot a rolling average (3 years) of magnitude to observe trends.
+
+🔹 Spatial Analysis
+
+Create a scatter map (longitude vs latitude) with color = magnitude and size = depth.
+
+Identify the most common latitude and longitude ranges (using binning or hist2d).
+
+Plot a 2D density plot (hexbin or kde) showing where most quakes occur geographically.
+
+Does depth vary by region? Plot depth vs latitude and depth vs longitude to inspect.
+
+Find the average magnitude in each 10-degree latitude band (e.g., -90 to -80, -80 to -70, etc.).
+
+🔹 Tsunami Relationship
+
+What percentage of earthquakes triggered a tsunami?
+
+Compare the average magnitude and depth of tsunami vs non-tsunami events.
+
+Plot boxplots for magnitude and depth, grouped by tsunami (0 vs 1).
+
+Plot the frequency of tsunamis per year as a line chart.
+
+Use a countplot to show how tsunami frequency changes with magnitude category.
+
+🔹 Advanced Insights
+
+Create a pairplot for numerical features (magnitude, depth, sig, cdi, mmi, nst, dmin, gap).
+
+Compute a new risk_score = magnitude * sig / (depth + 1) and analyze top 10 highest-risk events.
+
+Build a multi-plot dashboard (4 subplots) showing:
+
+(a) Magnitude distribution
+
+(b) Yearly event count
+
+(c) Depth vs Magnitude scatter
+
+(d) Correlation heatmap
