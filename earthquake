@@ -84,3 +84,92 @@ Build a multi-plot dashboard (4 subplots) showing:
 (c) Depth vs Magnitude scatter
 
 (d) Correlation heatmap
+
+
+
+
+
+
+
+-----------------------------------------------------------/
+
+
+🧩 1. Data Exploration
+
+Load and preview the dataset — display the first 10 rows and column data types.
+
+Check for missing values — confirm the dataset is 100% complete.
+
+Convert Year and Month into a date column and set it as the DataFrame index.
+
+Show summary statistics for all numeric features (.describe() output).
+
+Identify the strongest correlations between predictors and the target tsunami (using df.corr() and sns.heatmap).
+
+🌊 2. Magnitude & Tsunami Relationship
+
+Plot the distribution of earthquake magnitudes (histogram + KDE).
+
+Group earthquakes into bins (6.5–7.0, 7.0–7.5, 7.5–8.0, 8.0–9.1) and count tsunami vs non-tsunami events.
+
+Compute the average tsunami rate per magnitude bin and visualize with a bar chart.
+
+Boxplot of depth across different magnitude categories — are shallow quakes stronger or weaker?
+
+Scatter plot: magnitude vs depth, color-coded by tsunami status (0/1).
+
+📈 3. Temporal Analysis
+
+Plot number of earthquakes per year (line plot).
+
+Plot average magnitude per year — does the trend show increasing seismic activity?
+
+Plot tsunami occurrences per year — are tsunamis increasing over time?
+
+Identify the month(s) with the highest number of tsunami events.
+
+Compare average magnitude and depth by month (use grouped bar chart).
+
+🌐 4. Spatial Insights
+
+Create a scatter map (longitude vs latitude), with color = magnitude, and shape = tsunami presence.
+
+Use a hexbin or kdeplot to visualize global earthquake density (latitude vs longitude).
+
+Calculate average magnitude by latitude bands (e.g., every 10°).
+
+Show a heatmap of earthquake frequency across latitude and longitude grids.
+
+Identify the most tsunami-prone latitudes (group by latitude band, calculate tsunami ratio).
+
+⚙️ 5. Seismic Parameter Analysis
+
+Examine relationships between cdi, mmi, sig, and magnitude using a pairplot.
+
+Find which variable (depth, sig, mmi, or cdi) has the strongest correlation with tsunami occurrence.
+
+Bar chart: Average sig for tsunami vs non-tsunami events — is significance higher in tsunami events?
+
+Scatter plot: sig vs magnitude, colored by tsunami.
+
+Analyze how the number of stations (nst) and azimuthal gap (gap) affect tsunami classification (boxplot or violinplot).
+
+🧮 6. Risk Scoring & Derived Features
+
+Create a risk_score = (magnitude * sig) / (depth + 1) and add it as a new column.
+
+Show the top 10 highest-risk events and visualize them on a scatter map (longitude vs latitude).
+
+Compare average risk_score for tsunami vs non-tsunami events.
+
+Plot risk_score over time (2001–2022) to observe trends.
+
+Create a dashboard of 4 subplots summarizing key insights:
+
+(a) Magnitude distribution
+
+(b) Tsunami vs Non-tsunami counts
+
+(c) Depth vs Magnitude scatter
+
+(d) Correlation heatmap
