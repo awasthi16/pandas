@@ -11,6 +11,7 @@ Load and preview the dataset. Show the first 10 rows and check column data types
 Check for missing values in each column and calculate the percentage of missing data.
 
 Convert Year & Month into a datetime column named date.
+df['date'] = pd.to_datetime(dict(year=df['Year'], month=df['Month'], day=1))
 
 Get summary statistics (.describe()) for numeric columns like magnitude, depth, cdi, mmi, sig, etc.
 
