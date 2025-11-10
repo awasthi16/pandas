@@ -1,3 +1,11 @@
+data set
+https://www.kaggle.com/datasets/ahmeduzaki/global-earthquake-tsunami-risk-assessment-dataset?resource=download
+
+
+
+
+
+
 Load and preview the dataset. Show the first 10 rows and check column data types.
 
 Check for missing values in each column and calculate the percentage of missing data.
